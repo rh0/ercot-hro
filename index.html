@@ -8,11 +8,38 @@
 	<!--[if IE]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
+  <style type="text/css">
+    h1, h2, h3, h4, h5 {
+      text-align: center;
+    }
+
+    .chart {
+      display: block;
+      width: 75%;
+      margin: 0 auto;
+    }
+
+    .tick > text {
+      font-size: 8px;
+    }
+
+    .tick line, .domain {
+      stroke-width: .5;
+    }
+  </style>
 </head>
 
 <body>
-	<h2>Total Resources Offline Excluding Wind and Solar</h2>
-  <div id="chart"></div>
-  <script src="./charting.js"></script>
+	<h2>Predicted Total Resources Offline Excluding Wind and Solar</h2>
+  <div id="tot-resources" class="chart"></div>
+
+	<h2>Predicted Total IRR Offline (Wind and Solar)</h2>
+  <div id="tot-irr" class="chart"></div>
+
+	<h2>Predicted Total New Equipment Running but Offline</h2>
+  <h4>Not synced with the grid.</h4>
+  <div id="tot-new" class="chart"></div>
+
+  <script type="module" src="./main.js"></script>
 </body>
 </html>
