@@ -9,7 +9,7 @@ export default function (selector, dataSeries, key, color) {
     .range([margin.left, width - margin.right])
 
   let y = d3.scaleLinear()
-    .domain([0, d3.max(dataSeries[dataSeries.length - 1], d => d[key])]).nice()
+    .domain([0, d3.max(dataSeries[0], d => d[key])]).nice()
     .range([height - margin.bottom, margin.top])
 
   let xAxis = g => g
@@ -24,7 +24,7 @@ export default function (selector, dataSeries, key, color) {
       .attr("x", 3)
       .attr("text-anchor", "start")
       .attr("font-weight", "bold")
-      .text(dataSeries[0].y))
+      .text('MW'))
 
   let line = d3.line()
     .defined(d => !isNaN(d[key]))

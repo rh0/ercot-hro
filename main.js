@@ -8,15 +8,21 @@ import chart from './libs/charting.js'
   for(let f=0; f<filenames.length; f++) {
     data.push(
       await d3.csv(`./HROC/${filenames[f]}`, function(d) {
-        return {
-          date: new Date(d.Date).setHours(d.HourEnding),
-          resource: d.TotalResourceMW,
-          irr: d.TotalIRRMW,
-          newEquip: d.TotalNewEquipResourceMW
+        let saturday = new Date('2021-02-20')
+        let dataDate = new Date(d.Date)
+
+        if (dataDate < saturday) {
+          return {
+            date: new Date(d.Date).setHours(d.HourEnding),
+            resource: Number(d.TotalResourceMW),
+            irr: Number(d.TotalIRRMW),
+            newEquip: Number(d.TotalNewEquipResourceMW)
+          }
         }
       })
     )
   }
+  console.log(data)
 
   chart('#tot-resources', data, 'resource','blue')
   chart('#tot-irr', data, 'irr', 'green')
