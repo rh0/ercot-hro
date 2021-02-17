@@ -26,18 +26,45 @@
     .tick line, .domain {
       stroke-width: .5;
     }
+    
+    .key {
+      text-align: center;
+    }
+
+    .key span {
+      font-weight: bold;
+      margin-right: 10px;
+    }
   </style>
 </head>
 
 <body>
 	<h2>Predicted Total Resources Offline Excluding Wind and Solar</h2>
+  <div class="key">
+    <span style="color: darkblue">This Hour </span>
+    <span style="color: blue">1 Hour Ago</span>
+    <span style="color: lightblue">2 Hours Ago</span>
+  </div>
+
   <div id="tot-resources" class="chart"></div>
 
 	<h2>Predicted Total IRR Offline (Wind and Solar)</h2>
+  <div class="key">
+    <span style="color: darkgreen">This Hour </span>
+    <span style="color: green">1 Hour Ago</span>
+    <span style="color: lightgreen">2 Hours Ago</span>
+  </div>
+
   <div id="tot-irr" class="chart"></div>
 
 	<h2>Predicted Total New Equipment Running but Offline</h2>
   <h4>Not synced with the grid.</h4>
+  <div class="key">
+    <span style="color: darkblue">This Hour </span>
+    <span style="color: blue">1 Hour Ago</span>
+    <span style="color: lightblue">2 Hours Ago</span>
+  </div>
+
   <div id="tot-new" class="chart"></div>
 
   <script type="module" src="./main.js"></script>

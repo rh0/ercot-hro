@@ -8,7 +8,7 @@ import chart from './libs/charting.js'
   for(let f=0; f<filenames.length; f++) {
     data.push(
       await d3.csv(`./HROC/${filenames[f]}`, function(d) {
-        let saturday = new Date('2021-02-20')
+        let saturday = new Date('2021-02-19')
         let dataDate = new Date(d.Date)
 
         if (dataDate < saturday) {
@@ -22,9 +22,8 @@ import chart from './libs/charting.js'
       })
     )
   }
-  console.log(data)
 
   chart('#tot-resources', data, 'resource','blue')
   chart('#tot-irr', data, 'irr', 'green')
-  chart('#tot-new', data, 'newEquip', 'black')
+  chart('#tot-new', data, 'newEquip', 'blue')
 })()
