@@ -6,7 +6,7 @@ export default function (selector, dataSeries, key, color) {
     colorMods = ['dark', '', 'light']
 
   // Set the scales.
-  let x = d3.scaleUtc()
+  let x = d3.scaleTime()
     .domain(d3.extent(dataSeries[dataSeries.length - 1], d => d.date))
     .range([margin.left, width - margin.right])
   let y = d3.scaleLinear()
