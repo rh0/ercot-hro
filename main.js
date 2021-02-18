@@ -8,12 +8,13 @@ import chart from './libs/charting.js'
   for(let f=0; f<filenames.length; f++) {
     data.push(
       await d3.csv(`./HROC/${filenames[f]}`, function(d) {
-        let saturday = new Date('2021-02-19')
+        let future = new Date()
+        future.setHours(future.getHours() + 12)
         let dataDate = new Date(d.Date)
 
-        if (dataDate < saturday) {
+        if (dataDate < future) {
           return {
-            date: new Date(d.Date).setHours(d.HourEnding),
+            date: dataDate.setHours(d.HourEnding),
             resource: Number(d.TotalResourceMW),
             irr: Number(d.TotalIRRMW),
             newEquip: Number(d.TotalNewEquipResourceMW)
