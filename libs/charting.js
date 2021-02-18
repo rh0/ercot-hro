@@ -42,8 +42,8 @@ export default function (selector, dataSeries, key, color) {
   svg.append("g")
     .call(yAxis)
 
-  // Draw lines for each data set.
-  for(let i=0; i<dataSeries.length; i++) {
+  // Draw lines for each data set. (going backwards so most recent is on top)
+  for(let i=dataSeries.length - 1; i>=0; i--) {
     svg.append("path")
       .datum(dataSeries[i])
       .attr("fill", "none")
