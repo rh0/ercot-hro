@@ -26,21 +26,23 @@
     .tick line, .domain {
       stroke-width: .5;
     }
-    
+
     .key {
       text-align: center;
     }
 
     .key span {
       font-weight: bold;
-      margin-right: 10px;
+      margin: 0 10px;
     }
   </style>
 </head>
 
 <body>
+  <strong>Data gathered from <a href="http://mis.ercot.com/misapp/GetReports.do?reportTypeId=13103&reportTitle=Hourly%20Resource%20Outage%20Capacity">ERCOT MIS</a> hourly.
 	<h2>Predicted Total Resources Offline Excluding Wind and Solar</h2>
   <div class="key">
+    <strong>Runs: </strong>
     <span style="color: darkblue">This Hour </span>
     <span style="color: blue">1 Hour Ago</span>
     <span style="color: lightblue">2 Hours Ago</span>
@@ -50,6 +52,7 @@
 
 	<h2>Predicted Total IRR Offline (Wind and Solar)</h2>
   <div class="key">
+    <strong>Runs: </strong>
     <span style="color: darkgreen">This Hour </span>
     <span style="color: green">1 Hour Ago</span>
     <span style="color: lightgreen">2 Hours Ago</span>
@@ -60,6 +63,7 @@
 	<h2>Predicted Total New Equipment Running but Offline</h2>
   <h4>Not synced with the grid.</h4>
   <div class="key">
+    <strong>Runs: </strong>
     <span style="color: darkblue">This Hour </span>
     <span style="color: blue">1 Hour Ago</span>
     <span style="color: lightblue">2 Hours Ago</span>
