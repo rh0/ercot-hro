@@ -43,7 +43,8 @@
 </head>
 
 <body>
-  <strong>Data gathered from <a href="http://mis.ercot.com/misapp/GetReports.do?reportTypeId=13103&reportTitle=Hourly%20Resource%20Outage%20Capacity">ERCOT MIS</a> hourly.</strong>
+  <strong>Data gathered from <a href="http://mis.ercot.com/misapp/GetReports.do?reportTypeId=13103&reportTitle=Hourly%20Resource%20Outage%20Capacity">ERCOT MIS</a>.</strong><br>
+  <em>I have stopped the scraping process after the 10:00pm run on 2021.02.18. Now that we're seeing consistent stable improvements in Offline Resources.</em>
   <h1>Graphical Representation of ERCOT's "Hourly Resource Outage Capacity" Data</h1>
 	<h2>Predicted Total Thermal Resources Offline (Gas, Coal, Nuclear)</h2>
   <div class="key">
@@ -76,7 +77,7 @@
 
   <div id="tot-new" class="chart"></div>
 
-  <p>This is clearly pretty crude, but you can find the <a href="https://github.com/rh0/ercot-hro" target="_blank">code for this on GitHub</a>.</p>
+  <p>This is rushed and crude, but for the curious you can find the <a href="https://github.com/rh0/ercot-hro" target="_blank">code on GitHub</a>.</p>
 
   <script type="module" src="./main.js"></script>
 </body>

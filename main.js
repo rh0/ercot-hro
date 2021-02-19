@@ -8,8 +8,7 @@ import chart from './libs/charting.js'
   for(let f=0; f<filenames.length; f++) {
     data.push(
       await d3.csv(`./HROC/${filenames[f]}`, function(d) {
-        let current = new Date()
-        let future = new Date(current.getTime() + 43200000)
+        let future = new Date('02/20/2021')
         let dataDate = new Date(d.Date)
 
         if (dataDate < future) {
